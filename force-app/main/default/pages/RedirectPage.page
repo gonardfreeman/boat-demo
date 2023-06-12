@@ -1,0 +1,16 @@
+<apex:page>
+    <script>
+        var url = new URL(window.location);
+        var code = url.searchParams.get("code");
+        var parent = url.searchParams.get("state");
+        var error = url.searchParams.get("error");
+        var error_description = url.searchParams.get("error_description");
+        if (code && typeof code === "string" && code.trim().length > 0) {
+            window.opener.postMessage(JSON.stringify({ code: code }), parent);
+            window.close();
+        }
+        window.addEventListener("beforeunload", function () {
+            window.opener.postMessage(JSON.stringify({ isLoggedIn: false }), parent);
+        });
+    </script>
+</apex:page>

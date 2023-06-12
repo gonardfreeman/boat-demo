@@ -1,0 +1,41 @@
+<template>
+	<div class="slds-form-element">
+		<label class="slds-form-element__label" for="calendars"
+			>Calendars</label
+		>
+		<div class="slds-form-element__control">
+			<div class="slds-select_container">
+				<select
+					id="calendars"
+					class="slds-select"
+					onchange={handleCalendarChange}
+				>
+					<option value="">Select…</option>
+					<template for:each={preparedCalendars} for:item="calendar">
+						<option
+							key={calendar.value}
+							value={calendar.value}
+							selected={calendar.selected}
+						>
+							{calendar.label}
+						</option>
+					</template>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="events slds-p-vertical_small">
+		<h2 class="slds-text-heading_medium">Events:</h2>
+		<ul>
+			<template for:each={events} for:item="event">
+				<li key={event.id} class="slds-m-top_x-small">
+					<h3 class="slds-text-heading_small">{event.label}</h3>
+					<div class="slds-text-color_weak">
+						<c-date-time date-string={event.start}></c-date-time> -
+						<c-date-time date-string={event.end}></c-date-time>
+					</div>
+				</li>
+			</template>
+		</ul>
+	</div>
+</template>

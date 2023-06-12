@@ -1,0 +1,39 @@
+<template>
+	<article class="slds-card">
+		<div class="slds-card__header slds-grid">
+			<header
+				class="slds-media slds-media_center slds-has-flexi-truncate"
+			>
+				<div class="slds-media__body">
+					<h2 class="slds-card__header-title">
+						<span>Demo</span>
+						<template if:true={isLoading}>
+							<lightning-spinner
+								size="medium"
+								alternative-text="Loading"
+							></lightning-spinner>
+						</template>
+					</h2>
+				</div>
+				<div class="slds-no-flex">
+					<lightning-button
+						label={actionLabel}
+						disabled={isLoading}
+						variant={buttonVariant}
+						onclick={handleLoginLogout}
+					></lightning-button>
+				</div>
+			</header>
+		</div>
+		<div class="slds-card__body slds-card__body_inner">
+			<template if:true={isLoggedIn}>
+				<c-calendars-list
+					access-token={access_token}
+				></c-calendars-list>
+			</template>
+			<template if:false={isLoggedIn}>
+				<div class="slds-text-heading_medium">Please Login</div>
+			</template>
+		</div>
+	</article>
+</template>
