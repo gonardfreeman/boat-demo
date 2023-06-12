@@ -1,7 +1,7 @@
 global with sharing class GoogleApi {
 	private static final String clientId = 'YOUR_CLIENT_ID';
 	private static final String clientSecret = 'YOUR_CLIENT_SECRET';
-	private static final String redirectURI = 'https://home-4bd-dev-ed--c.develop.vf.force.com/apex/RedirectPage';
+	private static final String redirectURI = 'https://YOUR_ORG_DOMAIN/apex/RedirectPage';
 	private static final String format = 'yyyy-MM-dd\'T\'hh:mm:ssZ';
 
 	public static String getToken(String code) {
