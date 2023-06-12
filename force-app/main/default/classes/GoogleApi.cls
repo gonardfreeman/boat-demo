@@ -1,6 +1,6 @@
 global with sharing class GoogleApi {
-	private static final String clientId = '858680306047-qescfmuv1b7v565rhg0al52rp0j700sr.apps.googleusercontent.com';
-	private static final String clientSecret = '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';
+	private static final String clientId = 'YOUR_CLIENT_ID';
+	private static final String clientSecret = 'YOUR_CLIENT_SECRET';
 	private static final String redirectURI = 'https://home-4bd-dev-ed--c.develop.vf.force.com/apex/RedirectPage';
 	private static final String format = 'yyyy-MM-dd\'T\'hh:mm:ssZ';
 
